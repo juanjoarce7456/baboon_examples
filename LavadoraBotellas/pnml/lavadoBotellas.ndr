@@ -1,0 +1,65 @@
+p 145.0 215.0 p2 0 w
+t 145.0 285.0 lavarGaseosa w 0 w n {<D,N>} e
+t 415.0 285.0 lavarCerveza e 0 w n {<D,N>} w
+p 145.0 360.0 p5 0 w
+t 145.0 440.0 secarGaseosa w 0 w n {<D,N>} e
+t 415.0 445.0 enjuagarCerveza s 0 w n {<D,N>} w
+p 415.0 360.0 p6 0 e
+p 280.0 355.0 {Mod Lavado} 1 n
+p 415.0 215.0 p3 0 e
+p 880.0 100.0 p0 0 w
+t 880.0 175.0 clasificarBotella e 0 w n {<D,N>} s
+t 880.0 25.0 recibirBotella e 0 w n {<D,N>} w
+p 780.0 175.0 p11 0 w
+p 520.0 445.0 p8 0 e
+t 620.0 445.0 secarCerveza e 0 w n {<D,N>} n
+p 275.0 525.0 {Mod Secado} 1 n
+p 620.0 520.0 p13 0 e
+t 620.0 600.0 finSecadoCerveza e 0 w n {<D,N>} w
+t 615.0 120.0 clasificadaGaseosa e 0 w n {<D,N,(isGaseosa)>} sw
+t 780.0 275.0 clasificadaOtra w 0 w n {<D,N,(isOtra)>} e
+p 780.0 350.0 p14 0 w
+t 865.0 350.0 expulsarBotella s 0 w n {<D,N>} n
+t 615.0 215.0 clasificadaCerveza e 0 w n {<D,N,(isCerveza)>} sw
+p 145.0 520.0 p7 0 w
+t 145.0 610.0 finSecadoGaseosa w 0 w n {<D,N>} e
+p 975.0 350.0 p1 0 n
+t 1060.0 350.0 finExpulsion s 0 w n {<D,N>} n
+p 530.0 360.0 ModEnjuagado 1 n
+e ModEnjuagado enjuagarCerveza 1 n
+e secarCerveza ModEnjuagado 1 n
+e {Mod Lavado} lavarGaseosa 1 n
+e {Mod Lavado} lavarCerveza 1 n
+e secarGaseosa {Mod Lavado} 1 n
+e enjuagarCerveza {Mod Lavado} 1 n
+e lavarGaseosa p5 1 n
+e p5 secarGaseosa 1 n
+e secarGaseosa p7 1 n
+e p7 finSecadoGaseosa 1 n
+e lavarCerveza p6 1 n
+e p6 enjuagarCerveza 1 n
+e enjuagarCerveza p8 1 n
+e p8 secarCerveza 1 n
+e p3 lavarCerveza 1 n
+e p2 lavarGaseosa 1 n
+e clasificadaGaseosa 0.5 158.0 p2 0.25 97.0 1 n
+e clasificadaCerveza p3 1 n
+e recibirBotella p0 1 n
+e p0 clasificarBotella 1 n
+e p11 clasificadaGaseosa 1 n
+e p11 clasificadaCerveza 1 n
+e clasificarBotella p11 1 n
+e {Mod Secado} secarGaseosa 1 n
+e finSecadoGaseosa {Mod Secado} 1 n
+e {Mod Secado} 0.02879534057 83.36066219 secarCerveza 0.622588746 93.34880824 1 n
+e secarCerveza p13 1 n
+e p13 finSecadoCerveza 1 n
+e finSecadoCerveza 0.4659311841 88.26451723 {Mod Secado} 0.876178904 95.46203434 1 n
+e p11 clasificadaOtra 1 n
+e clasificadaOtra p14 1 n
+e p14 expulsarBotella 1 n
+e expulsarBotella p1 1 n
+e p1 finExpulsion 1 n
+h lavadoBotellas
+
+
