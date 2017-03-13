@@ -1,4 +1,7 @@
 package org.unc.lac.baboon_examples.lavado_botellas;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.unc.lac.baboon.exceptions.BadTopicsJsonFormat;
 import org.unc.lac.baboon.exceptions.NoTopicsJsonFileException;
 import org.unc.lac.baboon.exceptions.NotSubscribableException;
@@ -12,6 +15,7 @@ import org.unc.lac.baboon_examples.lavado_botellas.view.View;
 import org.unc.lac.javapetriconcurrencymonitor.petrinets.factory.PetriNetFactory.petriNetType;
 
 public class AppSetup implements BaboonApplication {
+	Logger LOGGER = Logger.getLogger(AppSetup.class.getName());
 	MaquinaLavadora maquina;
 	View vista;
 
@@ -23,7 +27,8 @@ public class AppSetup implements BaboonApplication {
         try {
             BaboonFramework.addTopicsFile("topic/topics.json");
         } catch (BadTopicsJsonFormat | NoTopicsJsonFileException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error inicializando Baboon Framework. La aplicación terminará ahora.", e);
+            System.exit(1);
         }
 		
 	}
@@ -44,7 +49,8 @@ public class AppSetup implements BaboonApplication {
 			BaboonFramework.appendTaskToComplexTask("lavarGaseosa", maquina, "secar", new BotellaGaseosa());
 			
 		} catch (NotSubscribableException e) {
-			e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error suscribiendo acciones a Baboon Framework. La aplicación terminará ahora.", e);
+            System.exit(1);
 		}
 		
 	}

@@ -13,7 +13,7 @@ import org.unc.lac.baboon_examples.lavado_botellas.maquina.MaquinaLavadora;
 
 public class View {
 	private JFrame frame;
-	private final int windowWidth = 1280, windowHeight = 720;
+	private final int windowWidth = 640, windowHeight = 240;
 
 	JButton botonCerveza;
 	JButton botonGaseosa;
@@ -25,7 +25,7 @@ public class View {
 		frame = new JFrame("Lavado Botellas");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(windowWidth, windowHeight);
-		frame.setResizable(true);
+		frame.setResizable(false);
 		frame.setVisible(true);
 		botonCerveza = new JButton("Insertar Cerveza");
 		botonGaseosa = new JButton("Insertar Gaseosa");
@@ -54,29 +54,14 @@ public class View {
 		frame.getContentPane().add(botonOtra);
 		frame.getContentPane().add(botonCerveza);
 		frame.getContentPane().add(botonGaseosa);
-		repaint();
-	}
-
-	private void repaint() {
-		new Thread(() -> {
-			while (true) {
-				botonCerveza.setVisible(true);
-				botonCerveza.setEnabled(true);
-				botonGaseosa.setVisible(true);
-				botonGaseosa.setEnabled(true);
-				botonOtra.setVisible(true);
-				botonOtra.setEnabled(true);
-				botonCerveza.setBounds(frame.getWidth() / 4 - 100, frame.getHeight() / 2, 200, 20);
-				botonGaseosa.setBounds(2 * frame.getWidth() / 4 - 100, frame.getHeight() / 2, 200, 20);
-				 botonOtra.setBounds(3 * frame.getWidth() / 4 - 100,frame.getHeight() / 2, 200, 20);
-
-				frame.repaint();
-				try {
-					Thread.sleep(20);
-				} catch (InterruptedException e1) {
-					e1.printStackTrace();
-				}
-			}
-		}).start();
+		botonCerveza.setVisible(true);
+		botonCerveza.setEnabled(true);
+		botonGaseosa.setVisible(true);
+		botonGaseosa.setEnabled(true);
+		botonOtra.setVisible(true);
+		botonOtra.setEnabled(true);
+		botonCerveza.setBounds(frame.getWidth() / 4 - 100, frame.getHeight() / 2, 150, 20);
+		botonGaseosa.setBounds(2 * frame.getWidth() / 4 - 100, frame.getHeight() / 2, 150, 20);
+		botonOtra.setBounds(3 * frame.getWidth() / 4 - 100,frame.getHeight() / 2, 150, 20);
 	}
 }
