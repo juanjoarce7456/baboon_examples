@@ -1,6 +1,6 @@
 package org.unc.lac.baboon_examples.robots;
 
-import org.unc.lac.baboon.annotations.Task;
+import org.unc.lac.baboon.annotations.TaskController;
 
 public class Machine extends Element {
 	
@@ -8,7 +8,7 @@ public class Machine extends Element {
 		super(name);
 	}
 	
-	@Task
+	@TaskController
 	public void processPiece(Piece piece){
 		System.out.println("Machine "+ name + " Processing: " + piece.getName());
 	}
