@@ -1,27 +1,33 @@
 [
-    {
-        "name" : "recepcion_botella",
-        "fireCallback": ["recibirBotella"]
-    },
-    {
-        "name" : "clasificacion_botella",
-        "permission": ["clasificarBotella"],
-        "fireCallback": ["clasificadaGaseosa", "clasificadaCerveza", "clasificadaOtra"],
-        "setGuardCallback" : [["isCerveza","isGaseosa","isOtra"]]
-    },
-    {
-        "name" : "lavado_cerveza",
-        "permission" : ["lavarCerveza","enjuagarCerveza","secarCerveza"],
-        "fireCallback": ["finSecadoCerveza"]
-    },
-    {
-        "name": "lavado_gaseosa",
-        "permission" : ["lavarGaseosa","secarGaseosa"],
-        "fireCallback" : ["finSecadoGaseosa"]
-    },
-    {
-        "name" : "expulsion_otra",
-        "permission": ["expulsarBotella"],
-        "fireCallback" : ["finExpulsion"]
-    }
+  {
+    "name" : "recepcion_botella",
+    "permission": ["recibirBotella"],
+    "fireCallback": ["finRecepcionBot"]
+  },
+  {
+    "name" : "clasificacion_botella",
+    "permission": ["clasificarBotella"],
+    "fireCallback": ["clasificadaGaseosa", "clasificadaCerveza", "clasificadaOtra"],
+    "setGuardCallback" : [["guardCerveza","guardGaseosa","guardOtra"]]
+  },
+  {
+    "name" : "lavado_cerveza",
+    "permission" : ["lavarCerveza","enjuagarCerveza","secarCerveza"],
+    "fireCallback": ["finSecadoCerveza"]
+  },
+  {
+    "name": "lavado_gaseosa",
+    "permission" : ["lavarGaseosa","secarGaseosa"],
+    "fireCallback" : ["finSecadoGaseosa"]
+  },
+  {
+    "name" : "expulsion_otra",
+    "permission": ["expulsarBotella"],
+    "fireCallback" : ["finExpulsion"]
+  },
+  {
+    "name" : "devolucion_botella",
+    "permission": ["devolverBotellaLimpia"],
+    "fireCallback" : ["finDevolucion"]
+  }
 ]
