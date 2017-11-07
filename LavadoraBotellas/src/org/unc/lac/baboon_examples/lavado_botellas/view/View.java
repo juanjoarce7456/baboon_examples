@@ -52,15 +52,18 @@ public class View implements GuiObserver{
 		frame.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				new Thread( () -> {
-					if(botonCerveza.contains(arg0.getPoint())){
-						maquina.recibirBotella(new BotellaCerveza());
-					}
-					else if(botonGaseosa.contains(arg0.getPoint())){
-						maquina.recibirBotella(new BotellaGaseosa());
-					}
-					else if(botonOtra.contains(arg0.getPoint())){
-						maquina.recibirBotella(new BotellaOtra());
+				new Thread( new Runnable() {
+					@Override
+					public void run() {
+						if(botonCerveza.contains(arg0.getPoint())){
+							maquina.recibirBotella(new BotellaCerveza());
+						}
+						else if(botonGaseosa.contains(arg0.getPoint())){
+							maquina.recibirBotella(new BotellaGaseosa());
+						}
+						else if(botonOtra.contains(arg0.getPoint())){
+							maquina.recibirBotella(new BotellaOtra());
+						}
 					}
 				}).start();
 			}
