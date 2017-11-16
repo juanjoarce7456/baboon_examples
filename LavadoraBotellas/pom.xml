@@ -5,7 +5,10 @@
     <version>0.0.1-SNAPSHOT</version>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <downloadSources>true</downloadSources>
+      <aspectj.version>1.8.9</aspectj.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <github.global.server>github</github.global.server>
   </properties>
 
     <repositories>
@@ -29,8 +32,56 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <useIncrementalCompilation>false</useIncrementalCompilation>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.10</version>
+                <configuration>
+                    <showWeaveInfo>true</showWeaveInfo>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <Xlint>ignore</Xlint>
+                    <complianceLevel>1.8</complianceLevel>
+                    <showWeaveInfo>true</showWeaveInfo>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <verbose>true</verbose>
+                    <warn>constructorName,packageDefaultMethod,deprecation,maskedCatchBlocks,unusedLocals,unusedArguments,unusedImport</warn>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+                            <artifactId>Baboon</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                    <!--<weaveDependencies>-->
+                        <!--<weaveDependency>-->
+                            <!--<groupId>BaboonFramework</groupId>-->
+                            <!--<artifactId>BaboonFramework</artifactId>-->
+                        <!--</weaveDependency>-->
+                    <!--</weaveDependencies>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- IMPORTANT -->
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -57,30 +108,39 @@
         </plugins>
     </build>
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>BaboonFramework</groupId>-->
+            <!--<artifactId>Baboon</artifactId>-->
+            <!--<version>0.0.1</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>com.github.juanjoarce7456</groupId>
-            <artifactId>petri_event_dispatcher</artifactId>
+            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+            <artifactId>Baboon</artifactId>
             <version>feature-build_using_maven-SNAPSHOT</version>
         </dependency>
+        <!-- AOP dependencies -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- Java Petri Concurrency Monitor -->
+        <dependency>
+            <groupId>com.github.airabinovich</groupId>
+            <artifactId>java_petri_engine</artifactId>
+            <version>dev-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.8.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.javatuples</groupId>
-            <artifactId>javatuples</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.netflix.rxjava</groupId>
-            <artifactId>rxjava-core</artifactId>
-            <version>0.20.7</version>
         </dependency>
     </dependencies>
 </project>

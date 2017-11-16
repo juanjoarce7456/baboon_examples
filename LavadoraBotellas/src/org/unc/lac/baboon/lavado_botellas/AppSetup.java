@@ -23,7 +23,7 @@ public class AppSetup implements BaboonApplication {
 	public void declare() {
 		maquina = new MaquinaLavadora();
 		vista = new View(maquina);
-        try {
+		try {
 			BaboonFramework.createPetriCore("/pnml/lavadoBotellas.pnml", petriNetType.PLACE_TRANSITION, InsertBottlesFirstPolicy.class);
 		} catch (BadPolicyException e) {
             LOGGER.log(Level.SEVERE, "Error configurando la política de disparos. La aplicación terminará ahora.", e);

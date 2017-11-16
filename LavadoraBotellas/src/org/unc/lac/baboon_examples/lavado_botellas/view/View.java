@@ -87,6 +87,7 @@ public class View implements GuiObserver{
 				
 			}
 		});
+		this.drawScreen();
 	}
 	
 	public void drawScreen(){
