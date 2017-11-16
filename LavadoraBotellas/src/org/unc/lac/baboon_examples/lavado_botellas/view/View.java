@@ -110,12 +110,6 @@ public class View implements GuiObserver{
 			catch(ConcurrentModificationException e){
 					e.printStackTrace();
 			}
-//			drawColliders(g);
-			Graphics2D g2d = (Graphics2D) g;
-			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-					RenderingHints.VALUE_ANTIALIAS_ON);
-	        g2d.setFont(new Font("Arial",Font.PLAIN,20));
-	        g2d.drawString("Time: ", 100,100);
 	        
 		} finally {
 			// It is best to dispose() a Graphics object when done with it.
