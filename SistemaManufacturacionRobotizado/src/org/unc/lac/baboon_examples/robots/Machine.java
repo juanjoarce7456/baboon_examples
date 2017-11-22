@@ -9,10 +9,12 @@ public class Machine extends Element {
 	}
 	
 	@TaskController
-	public void processPiece(Piece piece){
-		System.out.println("Machine "+ name + " Processing: " + piece.getName());
+	public void processPiece(Piece piece) throws InterruptedException {
+		System.out.printf("Machine %s Processing: %s\n", name, piece.getName());
+		Thread.sleep(1000);
+		System.out.printf("Piece %s successfully processed\n", piece.getName());
 	}
-	
-	
+
+
 
 }

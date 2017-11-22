@@ -72,7 +72,7 @@ public class RobotsApplication implements BaboonApplication {
 			BaboonFramework.subscribeControllerToTopic("R2.moveFromI2ToM2", r2, "movePiece", i2,m2);
 			BaboonFramework.subscribeControllerToTopic("R2.moveFromM2ToO2", r2, "movePiece", m2,o2);
 		} catch (NotSubscribableException e) {
-            LOGGER.log(Level.SEVERE, "Error suscribiendo acciones a Baboon Framework. La aplicaci�n terminar� ahora.", e);
+            LOGGER.log(Level.SEVERE, "Error suscribiendo acciones a Baboon Framework. La aplicación terminará ahora.", e);
             System.exit(1);
 		}
 		

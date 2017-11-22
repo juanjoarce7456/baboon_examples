@@ -9,7 +9,9 @@ public class Robot extends Element {
 	}
 	
 	@TaskController
-	public void movePiece(Element from, Element to){
-		System.out.println("Robot "+ name + " moving from : " + from.getName() + " To: " + to.getName() );
+	public void movePiece(Element from, Element to) throws InterruptedException {
+		System.out.printf("Robot %s moving piece from %s to %s \n", name, from.getName(), to.getName());
+		Thread.sleep(750);
+		System.out.println("Robot moved successfully");
 	}
 }

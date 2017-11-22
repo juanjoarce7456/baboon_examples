@@ -4,7 +4,7 @@ import rx.Observer;
 
 public class Output extends Element implements Observer<String> {
 
-	private static int count=0;
+	private static int count = 0;
 	
 	public Output(String name) {
 		super(name);
@@ -25,9 +25,8 @@ public class Output extends Element implements Observer<String> {
 	public void onNext(String arg0) {
 		count++;
 		System.out.println("---------------------------------------------------");
-		System.out.println("The Output " + name + " Has "+ count + "Pieces Now");
+		System.out.printf("The Output %s has %d pieces now\n", name, count);
 		System.out.println("---------------------------------------------------");
-		
 	}
 	
 
