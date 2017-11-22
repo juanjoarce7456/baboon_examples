@@ -1,11 +1,8 @@
 package org.unc.lac.baboon_examples.lavado_botellas.view;
 
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.awt.RenderingHints;
 import java.awt.Toolkit;
 
 import java.awt.event.MouseEvent;
@@ -114,7 +111,6 @@ public class View implements GuiObserver{
 		} finally {
 			// It is best to dispose() a Graphics object when done with it.
 			g.dispose();
-
 		}
 	 
 		// Shows the contents of the backbuffer on the screen.
@@ -134,7 +130,7 @@ public class View implements GuiObserver{
 				try {
 					URL url = this.getClass().getClassLoader().getResource(imgDir+ ref);
 					if (url == null) {
-						//System.out.println("Can't find ref: "+ref);
+						System.out.println("Can't find image: " + ref);
 					}
 					// use ImageIO to read the image in
 					sourceImage= ImageIO.read(url);
@@ -148,8 +144,6 @@ public class View implements GuiObserver{
 	public void updateInserted(Botella bot) {
 		bot.setImage(cargarImg(bot.getTipo().toString().toLowerCase()+".png"));
 		botellas.add(bot);
-		//System.out.println("Botella  en vista: " + bot.getTipo().name());
-		//System.out.println("Cantidad Botellas: " + botellas.size());
 	}
 
 	@Override
