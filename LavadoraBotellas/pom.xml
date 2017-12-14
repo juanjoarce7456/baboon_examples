@@ -135,14 +135,14 @@
         <dependency>
             <groupId>com.github.airabinovich</groupId>
             <artifactId>java_petri_engine</artifactId>
-            <version>v1.0-RC1</version>
+            <version>v1.0</version>
         </dependency>
 
         <!-- Baboon Framework -->
         <dependency>
             <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
             <artifactId>Baboon</artifactId>
-            <version>feature-build_using_maven-SNAPSHOT</version>
+            <version>master-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
