@@ -1,0 +1,99 @@
+[
+	{
+	"name":"R3.moveFromI3ToM4",
+	"permission":["R3.moveFromI3ToM4"],
+	"fireCallback":["R3.moveFromI3ToM4Done"]
+	},
+    {
+    "name":"M4.processFromI3",
+    "permission":["M4.processFromI3"],
+    "fireCallback":["M4.processFromI3Done"]
+    },
+    {
+    "name":"R2.moveFromM4ToM3",
+    "permission":["R2.moveFromM4ToM3"],
+    "fireCallback":["R2.moveFromM4ToM3Done"]
+    },
+    {
+    "name":"M3.processFromI3",
+    "permission":["M3.processFromI3"],
+    "fireCallback":["M3.processFromI3Done"]
+    },
+    {
+    "name":"R1.moveFromM3ToO3",
+    "permission":["R1.moveFromM3ToO3"],
+    "fireCallback":["R1.moveFromM3ToO3Done"]
+    },
+
+
+    {
+    "name":"R1.moveFromI1ToM3",
+    "permission":["R1.moveFromI1ToM3"],
+    "fireCallback":["R1.moveFromI1ToM3Done"]
+    },
+    {
+    "name":"M3.processFromI1",
+    "permission":["M3.processFromI1"],
+    "fireCallback":["M3.processFromI1Done"]
+    },
+    {
+    "name":"R2.moveFromM3ToM4",
+    "permission":["R2.moveFromM3ToM4"],
+    "fireCallback":["R2.moveFromM3ToM4Done"]
+    },
+    {
+    "name":"M4.processFromI1",
+    "permission":["M4.processFromI1"],
+    "fireCallback":["M4.processFromI1Done"]
+    },
+    {
+    "name":"R3.moveFromM4ToO1",
+    "permission":["R3.moveFromM4ToO1"],
+    "fireCallback":["R3.moveFromM4ToO1Done"]
+    },
+
+
+    {
+    "name":"R1.moveFromI1ToM1",
+    "permission":["R1.moveFromI1ToM1"],
+    "fireCallback":["R1.moveFromI1ToM1Done"]
+    },
+    {
+    "name":"M1.processFromI1",
+    "permission":["M1.processFromI1"],
+    "fireCallback":["M1.processFromI1Done"]
+    },
+    {
+    "name":"R2.moveFromM1ToM2",
+    "permission":["R2.moveFromM1ToM2"],
+    "fireCallback":["R2.moveFromM1ToM2Done"]
+    },
+    {
+    "name":"M2.processFromI1",
+    "permission":["M2.processFromI1"],
+    "fireCallback":["M2.processFromI1Done"]
+    },
+    {
+    "name":"R3.moveFromM2ToO1",
+    "permission":["R3.moveFromM2ToO1"],
+    "fireCallback":["R3.moveFromM2ToO1Done"]
+    },
+
+
+    {
+    "name":"R2.moveFromI2ToM2",
+    "permission":["R2.moveFromI2ToM2"],
+    "fireCallback":["R2.moveFromI2ToM2Done"]
+    },
+    {
+    "name":"M2.processFromI2",
+    "permission":["M2.processFromI2"],
+    "fireCallback":["M2.processFromI2Done"]
+    },
+    {
+    "name":"R2.moveFromM2ToO2",
+    "permission":["R2.moveFromM2ToO2"],
+    "fireCallback":["R2.moveFromM2ToO2Done"]
+    }
+]
+

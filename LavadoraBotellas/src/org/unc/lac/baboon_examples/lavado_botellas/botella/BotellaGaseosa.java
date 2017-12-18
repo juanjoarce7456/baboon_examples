@@ -7,25 +7,25 @@ public class BotellaGaseosa extends Botella implements Lavable {
 
 	@Override
 	public void lavar() {
-		System.out.println("-----------------------------------------------------------------------");
-		System.out.println("Lavando " + tipo.name());
+		//System.out.println("-----------------------------------------------------------------------");
+		//System.out.println("Lavando " + tipo.name());
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Fin Lavado " + tipo.name());
+		//System.out.println("Fin Lavado " + tipo.name());
 	}
 
 	@Override
 	public void secar() {
-		System.out.println("-----------------------------------------------------------------------");
-		System.out.println("Secando " + tipo.name());
+		//System.out.println("-----------------------------------------------------------------------");
+		//System.out.println("Secando " + tipo.name());
 		try {
-			Thread.sleep(500);
+			Thread.sleep(1500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Fin Secado " + tipo.name());
+		//System.out.println("Fin Secado " + tipo.name());
 	}
 }
