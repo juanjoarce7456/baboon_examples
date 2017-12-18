@@ -52,7 +52,7 @@
                     </warn>
                     <aspectLibraries>
                         <aspectLibrary>
-                            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+                            <groupId>com.github.juanjoarce7456.baboon</groupId>
                             <artifactId>Baboon</artifactId>
                         </aspectLibrary>
                     </aspectLibraries>
@@ -134,15 +134,15 @@
         <!-- Java Petri Concurrency Monitor -->
         <dependency>
             <groupId>com.github.airabinovich</groupId>
-            <artifactId>java_petri_engine</artifactId>
+            <artifactId>java_petri_concurrency_monitor</artifactId>
             <version>v1.0</version>
         </dependency>
 
         <!-- Baboon Framework -->
         <dependency>
-            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+            <groupId>com.github.juanjoarce7456.baboon</groupId>
             <artifactId>Baboon</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>v1.0</version>
         </dependency>
     </dependencies>
 </project>

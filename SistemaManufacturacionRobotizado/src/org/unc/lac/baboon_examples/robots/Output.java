@@ -4,7 +4,7 @@ import rx.Observer;
 
 public class Output extends Element implements Observer<String> {
 
-	private static int count = 0;
+	private int count = 0;
 	
 	public Output(String name) {
 		super(name);

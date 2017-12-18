@@ -52,7 +52,7 @@
                     </warn>
                     <aspectLibraries>
                         <aspectLibrary>
-                            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+                            <groupId>com.github.juanjoarce7456.baboon</groupId>
                             <artifactId>Baboon</artifactId>
                         </aspectLibrary>
                     </aspectLibraries>
@@ -140,11 +140,9 @@
 
         <!-- Baboon Framework -->
         <dependency>
-            <groupId>com.github.juanjoarce7456.petri_event_dispatcher</groupId>
+            <groupId>com.github.juanjoarce7456.baboon</groupId>
             <artifactId>Baboon</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>v1.0</version>
         </dependency>
     </dependencies>
-
-
 </project>
