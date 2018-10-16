@@ -135,14 +135,14 @@
         <dependency>
             <groupId>com.github.airabinovich</groupId>
             <artifactId>java_petri_engine</artifactId>
-            <version>v1.0</version>
+            <version>v1.0.1</version>
         </dependency>
 
         <!-- Baboon Framework -->
         <dependency>
             <groupId>com.github.juanjoarce7456.baboon</groupId>
             <artifactId>Baboon</artifactId>
-            <version>v1.0</version>
+            <version>v1.0.1</version>
         </dependency>
     </dependencies>
 </project>
